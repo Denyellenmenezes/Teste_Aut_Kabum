@@ -1,29 +1,28 @@
-name: Aut Kabum Tests
+name: Robot Tests Chrome
 
-on:
+on: 
   workflow_dispatch:
     inputs:
       cli:
-        description: Run by Robot Framework command line
-        default: robot tests/
+        description: Run by Robot command line
+        default: robot test_aut_kabum.robot
 
 jobs:
-  run-robot-framework-tests:
+  run-robot-framework-tests:  # Job relacionado ao Robot Framework
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4  # Aqui não há necessidade de alterar, é o mesmo para o Robot Framework. Usamos "actions/checkout" para obter o código do repositório.
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.10'  # Configuração do Python, o Robot Framework precisa disso para ser executado.
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Instala todas as dependências do requirements.txt
+          pip install -r requirements.txt  # Instala as dependências do requirements.txt, incluindo o Robot Framework e bibliotecas necessárias.
 
       - name: Run Robot Framework Tests
-        run: ${{ github.event.input.cli }}
-
+        run: ${{ github.event.input.cli }}  # Executa o comando de teste especificado (por padrão, robot test_aut_kabum.robot)
