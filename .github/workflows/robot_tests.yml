@@ -45,7 +45,7 @@ jobs:
         sudo chmod +x /usr/local/bin/chromedriver
 
     - name: Run E2E tests
-      run: robot -d ${GITHUB_WORKSPACE}/logs ${GITHUB_WORKSPACE}/Teste_Aut_Kabum/test_aut_kabum.robot
+      run: ${{ github.event.input.cli }}
 
     - name: Robot Reporter
       uses: joonvena/robotframework-reporter-action@v2.4
