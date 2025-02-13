@@ -1,4 +1,3 @@
 robotframework
 robotframework-seleniumlibrary
-String
 robotframework-operatingsystem
