@@ -47,9 +47,5 @@ jobs:
     - name: Run E2E tests
       run: ${{ github.event.input.cli }}
 
-    - name: Robot Reporter
-      uses: joonvena/robotframework-reporter-action@v2.4
-      with: 
-        gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-        Path to report: logs
+   
 
