@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.3 on win32)" generated="2025-02-13T05:56:51.433815" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste Aut Kabum" source="C:\Teste_Aut_Kabum">
+<suite id="s1-s1" name="Test Aut Kabum" source="C:\Teste_Aut_Kabum\test_aut_kabum.robot">
+<test id="s1-s1-t1" name="CA07 - Validar produto no carrinho de compras" line="77">
+<kw name="Acessar o site da kabum" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:56:51.849919" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-02-13T05:56:51.849919" level="INFO">Opening browser 'Chrome' to base url 'https://www.kabum.com.br'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROMEDRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-13T05:56:51.849919" elapsed="9.951523"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:01.894559" level="INFO">${TITLE} = KaBuM! | Aperte o K e evolua com as maiores ofertas em Tech e Gamer!</msg>
+<var>${TITLE}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-02-13T05:57:01.805245" elapsed="0.093503"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-13T05:57:01.898748" elapsed="0.095166"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${TITLE}</arg>
+<arg>${PAGE_TITLE}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-02-13T05:57:01.995416" elapsed="0.005242"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:56:51.849919" elapsed="10.151916"/>
+</kw>
+<kw name="Validar produto no carrinho">
+<kw name="Procurar por produto notebook">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:02.017401" level="INFO">Typing text 'notebook' into text field '//*[@id="input-busca"]'.</msg>
+<arg>${SEARCH_BAR}</arg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:57:02.009355" elapsed="0.267036"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:02.278412" level="INFO">Clicking element '(//button[@aria-label="Buscar"])[1]'.</msg>
+<arg>${BTN_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:57:02.277414" elapsed="3.889387"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:57:02.008349" elapsed="4.159491"/>
+</kw>
+<kw name="Selecionar o primeiro produto">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:06.175130" level="INFO">Executing JavaScript:
+document.body.style.zoom = '50%'
+Without any arguments.</msg>
+<arg>document.body.style.zoom = '50%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-13T05:57:06.169840" elapsed="0.084034"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_PRODUCT}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-13T05:57:06.254881" elapsed="0.106733"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:06.361614" level="INFO">Clicking element '(//div[@id="main-content"]//*[@class="imageCard"])[1]'.</msg>
+<arg>${FIRST_PRODUCT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:57:06.361614" elapsed="3.396983"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:09.771225" level="INFO">${url} = https://www.kabum.com.br/produto/658785/macbook-pro-apple-14-m4-pro-cpu-12-nucleos-gpu-16-nucleos-neural-engine-de-16-nucleos-24gb-ram-ssd-512gb-preto-espacial-mx2h3bz-a</msg>
+<var>${url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.759780" elapsed="0.011445"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${url}</arg>
+<arg>https://www.kabum.com.br/produto/</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.772228" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:57:06.168841" elapsed="3.604392"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:09.800595" level="INFO">${FIRST_PRODUCT_CODE} = Código: 658785</msg>
+<var>${FIRST_PRODUCT_CODE}</var>
+<arg>${PRODUCT_CODE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.773233" elapsed="0.028368"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-13T05:57:09.802605" level="INFO">${FIRST_PRODUCT_CODE} = Código: 658785</msg>
+<var>${FIRST_PRODUCT_CODE}</var>
+<arg>${FIRST_PRODUCT_CODE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.801601" elapsed="0.001004"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-02-13T05:57:09.803610" level="INFO">${ONLY_NUMBER} =  658785</msg>
+<var>${ONLY_NUMBER}</var>
+<arg>${FIRST_PRODUCT_CODE}</arg>
+<arg>Código:</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.803610" elapsed="0.001123"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-02-13T05:57:09.805745" level="INFO">${ONLY_NUMBER} =  658785</msg>
+<var>${ONLY_NUMBER}</var>
+<arg>${ONLY_NUMBER}</arg>
+<arg>'"" '</arg>
+<arg>''</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.804733" elapsed="0.001012"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-02-13T05:57:09.807794" level="INFO">${ONLY_NUMBER} = 658785</msg>
+<var>${ONLY_NUMBER}</var>
+<arg>${ONLY_NUMBER}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.806756" elapsed="0.001038"/>
+</kw>
+<kw name="Acessar Pré-carrinho">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:09.812291" level="INFO">Executing JavaScript:
+document.body.style.zoom = '40%'
+Without any arguments.</msg>
+<arg>document.body.style.zoom = '40%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.810937" elapsed="0.049691"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:09.861683" level="INFO">Clicking element '(//button[contains(text(),'COMPRAR')])[1]'.</msg>
+<arg>${GO_TO_CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:57:09.860628" elapsed="0.371604"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:57:09.809931" elapsed="0.422301"/>
+</kw>
+<kw name="Selecionar garantia de 12 meses">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[contains(text(), 'Produto adicionado no carrinho')]</arg>
+<arg>timeout=18</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-13T05:57:10.233232" elapsed="3.933667"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:14.167909" level="INFO">Executing JavaScript:
+document.body.style.zoom = '20%'
+Without any arguments.</msg>
+<arg>document.body.style.zoom = '20%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-13T05:57:14.167909" elapsed="0.027280"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:14.196325" level="INFO">Clicking element '//span[contains(text(), '12 Meses de garantia')]/ancestor::label//input[@type='radio']'.</msg>
+<arg>${12_WARRANTY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:57:14.196325" elapsed="0.114976"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:57:10.232232" elapsed="4.079069"/>
+</kw>
+<kw name="Acessar carrinho">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:14.311301" level="INFO">Executing JavaScript:
+document.body.style.zoom = '80%'
+Without any arguments.</msg>
+<arg>document.body.style.zoom = '80%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-13T05:57:14.311301" elapsed="0.032875"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CART_ICON}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-13T05:57:14.344176" elapsed="0.081776"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:14.426968" level="INFO">Clicking element '(//div[@id="header-container"]//descendant::*[contains(@id, "linkCarrinhoHeader")])[1]'.</msg>
+<arg>${CART_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:57:14.425952" elapsed="3.552225"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:17.981663" level="INFO">Executing JavaScript:
+document.body.style.zoom = '20%'
+Without any arguments.</msg>
+<arg>document.body.style.zoom = '20%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-13T05:57:17.978177" elapsed="0.032406"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:57:14.311301" elapsed="3.699282"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:18.011590" level="INFO">Executing JavaScript:
+document.body.style.zoom = '55%'
+Without any arguments.</msg>
+<arg>document.body.style.zoom = '55%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-13T05:57:18.010583" elapsed="0.037254"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-13T05:57:19.049442" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-13T05:57:18.047837" elapsed="1.001605"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PRODUCT_ID}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-13T05:57:19.049442" elapsed="0.019199"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:57:19.083335" level="INFO">${PRODUCT_CART_CODE} = https://www.kabum.com.br/produto/658785/macbook-pro-apple-14-m4-pro-cpu-12-n-cleos-gpu-16-n-cleos-neural-engine-de-16-n-cleos-24gb-ram-ssd-512gb-preto-espacial-mx2h3bz-a</msg>
+<var>${PRODUCT_CART_CODE}</var>
+<arg>${PRODUCT_ID}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:57:19.068641" elapsed="0.014694"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-13T05:57:24.084831" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-13T05:57:19.084339" elapsed="5.000492"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${PRODUCT_CART_CODE}</arg>
+<arg>.*(${ONLY_NUMBER}).*</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2025-02-13T05:57:24.084831" elapsed="0.002007"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:57:02.007011" elapsed="22.079827"/>
+</kw>
+<kw name="Fechar navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-13T05:57:24.094867" elapsed="2.869073"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:57:24.092860" elapsed="2.871080"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:56:51.849919" elapsed="35.114021"/>
+</test>
+<status status="PASS" start="2025-02-13T05:56:51.472210" elapsed="35.491730"/>
+</suite>
+<status status="PASS" start="2025-02-13T05:56:51.435822" elapsed="35.543944"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Teste Aut Kabum">Teste Aut Kabum</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test Aut Kabum">Teste Aut Kabum.Test Aut Kabum</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-13T05:56:51.424662" level="WARN">Error in file 'C:\Teste_Aut_Kabum\test_aut_kabum.robot' on line 100: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-02-13T05:56:51.849919" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+</errors>
+</robot>

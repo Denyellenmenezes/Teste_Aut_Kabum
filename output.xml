@@ -1,35 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.3 on win32)" generated="2025-02-12T14:26:21.262772" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.3 on win32)" generated="2025-02-13T05:16:25.244569" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Aut Kabum" source="C:\Teste_Aut_Kabum\test_aut_kabum.robot">
-<test id="s1-t1" name="Deve acessar o site da kabum" line="22">
+<test id="s1-t1" name="CA01 - Deve Buscar pelo produto notebook" line="57">
+<kw name="Acessar o site da kabum" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-12T14:26:21.501656" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
-<msg time="2025-02-12T14:26:21.501656" level="INFO">Opening browser 'Chrome' to base url 'https://www.kabum.com.br'.</msg>
+<msg time="2025-02-13T05:16:25.612313" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-02-13T05:16:25.612313" level="INFO">Opening browser 'Chrome' to base url 'https://www.kabum.com.br'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>executable_path=${CHROMEDRIVER_PATH}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-12T14:26:21.501656" elapsed="7.272620"/>
+<status status="PASS" start="2025-02-13T05:16:25.612313" elapsed="9.893463"/>
 </kw>
 <kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2025-02-12T14:26:28.800666" level="INFO">${TITLE} = KaBuM! | Aperte o K e evolua com as maiores ofertas em Tech e Gamer!</msg>
+<msg time="2025-02-13T05:16:35.518781" level="INFO">${TITLE} = KaBuM! | Aperte o K e evolua com as maiores ofertas em Tech e Gamer!</msg>
 <var>${TITLE}</var>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-02-12T14:26:28.775288" elapsed="0.025378"/>
+<status status="PASS" start="2025-02-13T05:16:35.505776" elapsed="0.013005"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-13T05:16:35.519778" elapsed="0.117534"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${TITLE}</arg>
 <arg>${PAGE_TITLE}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-02-12T14:26:28.800666" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-13T05:16:35.638313" elapsed="0.000000"/>
 </kw>
+<status status="PASS" start="2025-02-13T05:16:25.612313" elapsed="10.026000"/>
+</kw>
+<kw name="Procurar por produto notebook">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:16:35.640312" level="INFO">Typing text 'notebook' into text field '//*[@id="input-busca"]'.</msg>
+<arg>${SEARCH_BAR}</arg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:16:35.639312" elapsed="0.330208"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T05:16:35.969520" level="INFO">Clicking element '(//button[@aria-label="Buscar"])[1]'.</msg>
+<arg>${BTN_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T05:16:35.969520" elapsed="4.809451"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:16:35.639312" elapsed="5.139659"/>
+</kw>
+<kw name="Fechar navegador" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-12T14:26:28.800666" elapsed="2.251172"/>
+<status status="PASS" start="2025-02-13T05:16:40.781141" elapsed="2.473167"/>
 </kw>
-<status status="PASS" start="2025-02-12T14:26:21.501656" elapsed="9.550182"/>
+<status status="PASS" start="2025-02-13T05:16:40.780140" elapsed="2.474168"/>
+</kw>
+<status status="PASS" start="2025-02-13T05:16:25.612313" elapsed="17.641995"/>
 </test>
-<status status="PASS" start="2025-02-12T14:26:21.262772" elapsed="9.789066"/>
+<status status="PASS" start="2025-02-13T05:16:25.244569" elapsed="18.009739"/>
 </suite>
 <statistics>
 <total>
@@ -42,6 +68,7 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2025-02-12T14:26:21.501656" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-02-13T05:16:25.243137" level="WARN">Error in file 'C:\Teste_Aut_Kabum\test_aut_kabum.robot' on line 114: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-02-13T05:16:25.612313" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
 </errors>
 </robot>
