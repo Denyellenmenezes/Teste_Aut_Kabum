@@ -1,64 +1,111 @@
-# Teste_Aut_Kabum
-Automação de Compra no Kabum - Robot Framework
-Descrição: Este projeto utiliza o Robot Framework com Selenium Webdriver para automatizar a navegação no site www.kabum.com.br. O objetivo é realizar uma busca por um produto, selecionar o primeiro item, validar os valores de frete, adicionar ao carrinho e finalizar a compra com uma garantia de 12 meses.
+# 🛒 **Automação de Compra no Kabum - Robot Framework**  
 
-Requisitos:
+## 📌 **Descrição**  
+Este projeto utiliza o **Robot Framework** com **Selenium WebDriver** para automatizar a navegação no site [Kabum](https://www.kabum.com.br). O objetivo é:  
+✅ Realizar uma busca por um produto  
+✅ Selecionar o primeiro item da lista  
+✅ Validar os valores de frete  
+✅ Adicionar ao carrinho com uma **garantia de 12 meses**  
+✅ Finalizar a compra  
 
-Python 3.x
-Robot Framework
-Selenium Webdriver
-Chromedriver (para Chrome)
-Instalação das dependências
-Instale o Python 3.x (se ainda não o tiver instalado).
+---
 
-Passo a Passo de instalação:
-Instale o Robot Framework: pip install robotframework
-Instale o Selenium Library para integração com o Selenium: pip install robotframework-seleniumlibrary
-Baixe o Chromedriver compatível com a versão do seu Google Chrome a partir de aqui.
+## ⚙️ **Requisitos**  
 
-Após o download, coloque o arquivo do Chromedriver em um diretório de fácil acesso e altere a variável ${CHROMEDRIVER_PATH} no código para apontar para o caminho correto do arquivo
+- 🐍 **Python 3.x**  
+- 🤖 **Robot Framework**  
+- 🌐 **Selenium WebDriver**  
+- 🖥️ **ChromeDriver** (para automação no Google Chrome)  
 
-Estrutura do Código:
-O código está estruturado da seguinte forma:
+---
 
-Settings: Importa as bibliotecas necessárias (SeleniumLibrary e String).
-Variables: Define as variáveis usadas durante o teste (URLs, XPaths, variáveis de produto e frete).
-Test Cases: Define os casos de teste, como buscar por um produto, verificar o valor de frete, comprar o produto e verificar o carrinho.
-Keywords: Contém as palavras-chave reutilizáveis para a execução do teste, como validações de valores e manipulação de elementos na página.
+## 📥 **Instalação das Dependências**  
 
-Como Executar o Código:
-Clone este repositório ou baixe o arquivo .robot para o seu ambiente local.
-Abra o terminal ou prompt de comando na pasta onde o arquivo .robot está localizado.
-Execute o seguinte comando: robot nome_do_arquivo.robot
-Isso executará os testes definidos no arquivo .robot e você verá os resultados no terminal.
+1️⃣ **Instale o Python 3.x** *(se ainda não estiver instalado)*  
+2️⃣ Instale o **Robot Framework**:  
+   ```sh
+   pip install robotframework
+   ```
+3️⃣ Instale o **Selenium Library** para integração com o Selenium:  
+   ```sh
+   pip install robotframework-seleniumlibrary
+   ```
+4️⃣ **Baixe o ChromeDriver** compatível com a versão do seu Google Chrome. 🔗 [Clique aqui para baixar](https://chromedriver.chromium.org/downloads)  
+5️⃣ **Configure o ChromeDriver**:  
+   - Após o download, coloque o arquivo em um diretório de fácil acesso.  
+   - No código, altere a variável `${CHROMEDRIVER_PATH}` para apontar para o caminho correto do arquivo.  
 
-Fluxo de Execução:
-Acessar o site: O navegador é aberto e o site Kabum é carregado.
-Busca por notebook: O código realiza uma busca pelo termo "notebook" na barra de pesquisa.
-Seleção do primeiro produto: O primeiro produto listado na página de resultados é selecionado.
-Verificação de fretes: O código valida os valores de frete com base em um intervalo definido.
-Adicionar ao carrinho: O produto é adicionado ao carrinho após a seleção da garantia de 12 meses.
-Finalização da compra: O carrinho é acessado e validado.
-Resultados Esperados
-Ao final da execução, o teste verificará os seguintes pontos:
+---
 
-O produto "notebook" foi encontrado e selecionado corretamente.
-Os valores de frete estão dentro do intervalo esperado (entre R$ 1,00 e R$ 400,00).
-O produto foi adicionado corretamente ao carrinho.
-A garantia de 12 meses foi selecionada.
-Saídas Analíticas
-Durante a execução, o Robot Framework fornecerá saídas analíticas detalhadas, incluindo:
+## 📂 **Estrutura do Código**  
 
-Casos de sucesso e falhas:
-Informações sobre os valores de frete e validações.
-Logs detalhados da execução, como clique de elementos, valores encontrados, etc.
-Esses detalhes serão úteis para validar o funcionamento correto da automação e identificar possíveis problemas durante a execução.
+📌 **Settings**  
+   - Importa as bibliotecas necessárias (**SeleniumLibrary, String**).  
 
-Considerações:
-O código foi feito para trabalhar com o navegador Chrome, utilizando o Chromedriver.
-O comportamento do site pode mudar, afetando os testes. Caso o layout do site seja alterado, pode ser necessário ajustar os XPaths ou o fluxo de navegação.
-Licença
-Este projeto é licenciado sob a licença MIT - consulte o arquivo LICENSE para mais detalhes.
+📌 **Variables**  
+   - Define variáveis usadas nos testes (URLs, XPaths, produto, frete).  
+
+📌 **Test Cases**  
+   - Casos de teste como **buscar um produto, verificar frete, comprar o item e validar o carrinho**.  
+
+📌 **Keywords**  
+   - Contém **palavras-chave reutilizáveis** para validações e manipulação de elementos da página.  
+
+---
+
+## ▶️ **Como Executar os Testes**  
+
+1️⃣ **Clone este repositório** ou baixe o arquivo `.robot` para o seu computador.  
+2️⃣ **Abra o terminal** na pasta onde o arquivo `.robot` está localizado.  
+3️⃣ **Execute o comando:**  
+   ```sh
+   robot nome_do_arquivo.robot
+   ```
+4️⃣ O Robot Framework executará os testes e exibirá os **resultados no terminal**.  
+
+---
+
+## 🔄 **Fluxo de Execução**  
+
+1️⃣ **Acessar o site**: O navegador é aberto e o site Kabum é carregado.  
+2️⃣ **Busca por notebook**: A pesquisa pelo termo **"notebook"** é realizada.  
+3️⃣ **Seleção do primeiro produto**: O primeiro item da lista de resultados é selecionado.  
+4️⃣ **Verificação de frete**: Os valores são validados dentro de um intervalo esperado.  
+5️⃣ **Adicionar ao carrinho**: O produto é adicionado com **garantia de 12 meses**.  
+6️⃣ **Finalização da compra**: O carrinho é acessado e validado.  
+
+---
+
+## ✅ **Resultados Esperados**  
+
+🔹 O produto **"notebook"** é encontrado e selecionado corretamente.  
+🔹 Os valores de **frete** estão dentro do intervalo esperado (**R$ 1,00 - R$ 400,00**).  
+🔹 O produto foi **adicionado corretamente ao carrinho**.  
+🔹 A **garantia de 12 meses** foi selecionada com sucesso.  
+
+---
+
+## 📊 **Saídas Analíticas**  
+
+📌 **Logs detalhados** sobre a execução do teste, incluindo:  
+✔️ Sucessos e falhas  
+✔️ Validação dos valores de frete  
+✔️ Registros de cliques e interações na página  
+
+Essas informações ajudam a identificar **possíveis problemas** e validar o funcionamento correto da automação.  
+
+---
+
+## ⚠️ **Considerações**  
+
+🔹 O código foi feito para rodar no **Google Chrome** com **ChromeDriver**.  
+🔹 Caso o **layout do site mude**, pode ser necessário ajustar os **XPaths** e o fluxo de navegação.  
+
+---
+
+## 📜 **Licença**  
+
+Este projeto está licenciado sob a **Licença MIT**. Consulte o arquivo `LICENSE` para mais detalhes.  
 
 
 
